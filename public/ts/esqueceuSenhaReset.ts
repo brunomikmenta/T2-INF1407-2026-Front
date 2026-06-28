@@ -1,6 +1,6 @@
 export {};
 
-const backendAddress = 'https://t2-inf1407-2026-back.onrender.com';
+const backendAddress = 'https://t2-inf1407-2026-back.onrender.com/';
 
 window.addEventListener('load', () => {
     const form = document.getElementById('formResetSenha') as HTMLFormElement | null;

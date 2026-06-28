@@ -1,6 +1,6 @@
 export {};
 
-const backendCandidates = ['https://t2-inf1407-2026-back.onrender.com'];
+const backendCandidates = ['https://t2-inf1407-2026-back.onrender.com/'];
 
 declare global {
     interface Window {

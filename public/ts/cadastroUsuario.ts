@@ -1,6 +1,6 @@
 export {};
 
-const backendAddress = 'https://t2-inf1407-2026-back.onrender.com';
+const backendAddress = 'https://t2-inf1407-2026-back.onrender.com/';
 
 function getCookie(name: string): string {
     const cookieValue = `; ${document.cookie}`;
