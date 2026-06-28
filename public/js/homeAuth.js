@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('https://t2-inf1407-2026-back.onrender.com', () => {
     const authBtn = document.getElementById('auth-btn');
     const perfilBtn = document.getElementById('perfil-btn');
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';

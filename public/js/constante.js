@@ -1,1 +1,1 @@
-export const backendAddress = 'http://127.0.0.1:8000/';
+export const backendAddress = 'https://t2-inf1407-2026-back.onrender.com';

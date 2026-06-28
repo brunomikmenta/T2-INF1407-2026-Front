@@ -1,4 +1,4 @@
-const backendAddress = 'http://127.0.0.1:8000/';
+const backendAddress = 'https://t2-inf1407-2026-back.onrender.com';
 function getCookie(name) {
     var _a, _b;
     const cookieValue = `; ${document.cookie}`;
