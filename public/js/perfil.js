@@ -67,14 +67,6 @@ function toggleElement(element, shouldShow) {
 }
 window.addEventListener('DOMContentLoaded', () => {
     console.debug('[perfil] DOMContentLoaded');
-    
-    const accessToken = localStorage.getItem('accessToken');
-
-        if (!accessToken) {
-            window.location.href = './login.html';
-            return;
-        }
-
     const playlistView = document.getElementById('profile-playlist-view');
     const editView = document.getElementById('profile-edit-view');
     const btnShowPlaylist = document.getElementById('btn-show-playlist');
@@ -135,8 +127,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 <td>${song.artist || '-'}</td>
                 <td>${song.gender || '-'}</td>
                 <td>
-                    <a href="./editSong.html?songId=${songId}">Editar</a>
-                    <a href="./deleteSong.html?songId=${songId}">Deletar</a>
+                    <a class="btn btn-warning" href="./editSong.html?songId=${songId}">Editar</a>
+                    <a class="btn btn-danger" href="./deleteSong.html?songId=${songId}">Deletar</a>
                 </td>
             `;
             playlistTableBody.appendChild(row);
@@ -170,13 +162,10 @@ window.addEventListener('DOMContentLoaded', () => {
                 method: 'GET',
                 headers: buildAuthHeaders(),
             });
-            
-            if (profileResponse.status === 401) {
+            if (!profileResponse.ok) {
                 localStorage.removeItem('isLoggedIn');
-                localStorage.removeItem('accessToken');
-                localStorage.removeItem('username');
-
-                window.location.href = './login.html';
+                setProfileMessage('Sessao expirada. Faca login novamente.', 'red');
+                showFeedback('Sessao expirada. Faca login novamente.', 'error');
                 return;
             }
             const data = await profileResponse.json();

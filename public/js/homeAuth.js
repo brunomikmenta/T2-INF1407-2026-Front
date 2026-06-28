@@ -3,13 +3,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const perfilBtn = document.getElementById('perfil-btn');
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     const username = localStorage.getItem('username');
-    
-    if (isLoggedIn) {
+    if (perfilBtn) {
         perfilBtn.href = './perfil.html';
-    } else {
-        perfilBtn.href = './login.html';
     }
-
     if (!authBtn) {
         return;
     }
