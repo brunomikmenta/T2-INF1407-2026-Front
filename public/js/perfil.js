@@ -67,6 +67,14 @@ function toggleElement(element, shouldShow) {
 }
 window.addEventListener('DOMContentLoaded', () => {
     console.debug('[perfil] DOMContentLoaded');
+    
+    const accessToken = localStorage.getItem('accessToken');
+
+        if (!accessToken) {
+            window.location.href = './login.html';
+            return;
+        }
+
     const playlistView = document.getElementById('profile-playlist-view');
     const editView = document.getElementById('profile-edit-view');
     const btnShowPlaylist = document.getElementById('btn-show-playlist');
@@ -162,10 +170,13 @@ window.addEventListener('DOMContentLoaded', () => {
                 method: 'GET',
                 headers: buildAuthHeaders(),
             });
-            if (!profileResponse.ok) {
+            
+            if (profileResponse.status === 401) {
                 localStorage.removeItem('isLoggedIn');
-                setProfileMessage('Sessao expirada. Faca login novamente.', 'red');
-                showFeedback('Sessao expirada. Faca login novamente.', 'error');
+                localStorage.removeItem('accessToken');
+                localStorage.removeItem('username');
+
+                window.location.href = './login.html';
                 return;
             }
             const data = await profileResponse.json();
