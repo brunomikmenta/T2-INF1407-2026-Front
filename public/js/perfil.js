@@ -67,6 +67,11 @@ function toggleElement(element, shouldShow) {
 }
 window.addEventListener('DOMContentLoaded', () => {
     console.debug('[perfil] DOMContentLoaded');
+    const accessToken = localStorage.getItem('accessToken');
+    if (!accessToken) {
+        window.location.href = './login.html';
+        return;
+    }
     const playlistView = document.getElementById('profile-playlist-view');
     const editView = document.getElementById('profile-edit-view');
     const btnShowPlaylist = document.getElementById('btn-show-playlist');
