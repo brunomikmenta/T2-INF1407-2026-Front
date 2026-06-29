@@ -1,1 +1,1 @@
-export const backendAddress = 'https://mysongprofileappv2.onrender.com/';
+export const backendAddress = 'https://t2-inf1407-2026-back.onrender.com/';
