@@ -1,4 +1,4 @@
-const backendAddress = 'https://t2-inf1407-2026-back.onrender.com/';
+const backendAddress = 'https://mysongprofileappv2.onrender.com/';
 window.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('formulario');
     const messageDiv = document.getElementById('message');

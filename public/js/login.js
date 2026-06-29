@@ -1,4 +1,4 @@
-const backendCandidates = ['https://t2-inf1407-2026-back.onrender.com/'];
+const backendCandidates = ['https://mysongprofileappv2.onrender.com/'];
 function getOrderedBackends() {
     const saved = localStorage.getItem('activeBackendAddress');
     if (!saved || !backendCandidates.includes(saved)) {
