@@ -108,6 +108,14 @@ function toggleElement(element: HTMLElement | null, shouldShow: boolean): void {
 
 window.addEventListener('DOMContentLoaded', () => {
     console.debug('[perfil] DOMContentLoaded');
+    
+    const accessToken = localStorage.getItem('accessToken');
+
+        if (!accessToken) {
+            window.location.href = './login.html';
+            return;
+        }
+
     const playlistView = document.getElementById('profile-playlist-view') as HTMLElement | null;
     const editView = document.getElementById('profile-edit-view') as HTMLElement | null;
     const btnShowPlaylist = document.getElementById('btn-show-playlist') as HTMLButtonElement | null;
